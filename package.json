@@ -1,0 +1,27 @@
+{
+  "name": "react-shop",
+  "version": "1.0.0",
+  "description": "react e-shop",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "https://github.com/franciscogsycod/CursoPracticoReact2-JS.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscogsycod/CursoPracticoReact2-JS.git"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "franciscogsycod",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franciscogsycod/CursoPracticoReact2-JS/issues"
+  },
+  "homepage": "https://github.com/franciscogsycod/CursoPracticoReact2-JS#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
