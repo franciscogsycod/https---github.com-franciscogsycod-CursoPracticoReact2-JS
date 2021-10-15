@@ -6,7 +6,8 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     mode: 'development',
     resolve: {
@@ -51,6 +52,7 @@ module.exports = {
     devServer: {
         //contentBase: path.join(__dirname, 'dist'),
         allowedHosts: path.join(__dirname, 'dist'),
+        historyApiFallback : true,
         compress: true,
         port: 3000,
     }
