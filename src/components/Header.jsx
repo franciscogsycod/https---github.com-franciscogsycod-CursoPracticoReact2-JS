@@ -2,6 +2,8 @@ import React from 'react';
 import '@styles/Header.scss';
 
 import Menu from '@components/Menu';
+import AppContext from '../context/AppContext';
+import MyOrder from '../containers/MyOrder';
 
 import icon_menu from '@icons/icon_menu.svg';
 import logo_yard_sale from '@logos/logo_yard_sale.svg';
@@ -10,10 +12,18 @@ import icon_shopping_cart from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
 
+	const { state } = React.useContext(AppContext);
+
+	const [toggleOrders, setToggleOrders] = React.useState(false);
+
 	const [toggle, setToggle] = React.useState(false);
 
 	const handleToggle = () => {
 		setToggle(!toggle);
+	};
+
+	const handleToggleOrders = () => {
+		setToggleOrders(!toggleOrders);
 	};
 
 	return (
@@ -47,14 +57,19 @@ const Header = () => {
 					<li className="navbar-email" onClick={handleToggle}>
 						platzi@example.com
 					</li>
-					<li className="navbar-shopping-cart">
+					<li className="navbar-shopping-cart" onClick={handleToggleOrders}>
 						<img src={icon_shopping_cart} alt="shopping cart" />
-						<div>2</div>
+						{
+							(state.cart.length > 0 ? <div>{state.cart.length}</div> : null)
+						}
 					</li>
 				</ul>
 			</div>
 			{
 				toggle && <Menu/>
+			}
+			{
+				toggleOrders && <MyOrder/>
 			}
 		</nav>
 	);
